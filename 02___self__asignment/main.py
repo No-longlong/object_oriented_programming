@@ -3,7 +3,8 @@ class User:
         self.name = n
         self.email = m
         self.password = p
-        return (n, m, p)
+        # return (n, m, p)
+# return을 하지 않아도, __init__자체가 인스턴스 변수의 값을 만드는 역할을 한 것.
 
 user1 = User()
 user1.initialize("Young", "young@codeit.kr", "123456")
