@@ -55,43 +55,48 @@ class Clock:
         각각 시, 분, 초를 나타내는 카운터 인스턴스 3개(hour, minute, second)를 정의한다.
         현재 시간을 파라미터 hour시, minute분, second초로 지정한다.
         """
-        Counter.hour = hour
-        Counter.minute = minute
-        Counter.second = second
-        # 코드를 쓰세요
+        self.hour = Counter(Clock.HOURS)
+        self.minute = Counter(Clock.MINUTES)
+        self.second = Counter(Clock.SECONDS)
+
+        # self.hour.set(hour)
+        # self.minute.set(minute)
+        # self.second.set(second)
+        self.set(hour, minute, second)
 
     def set(self, hour, minute, second):
         """현재 시간을 파라미터 hour시, minute분, second초로 설정한다."""
-        Counter.hour = hour
-        Counter.minute = minute
-        Counter.second = second
-        # 코드를 쓰세요
+        self.hour.set(hour)
+        self.minute.set(minute)
+        self.second.set(second)
+
 
     def tick(self):
         """
         초 카운터의 값을 1만큼 증가시킨다.
         초 카운터를 증가시킬 때, 분 또는 시가 바뀌어야하는 경우도 처리한다.
         """
-        Counter.second += 1
-        if Counter.second >= Clock.SECONDS:
-            Counter.second = 0
-            Counter.minute += 1
-        if Counter.minute >= Clock.MINUTES:
-            Counter.minute = 0
-            Counter.hour += 1
-        if Counter.hour >= Clock.HOURS:
-            Counter.hour = 0
-
-        # 코드를 쓰세요
+        if self.second.tick():
+            if self.minute.tick():
+                self.hour.tick()
+        # Counter.second += 1
+        # if Counter.second >= Clock.SECONDS:
+        #     Counter.second = 0
+        #     Counter.minute += 1
+        # if Counter.minute >= Clock.MINUTES:
+        #     Counter.minute = 0
+        #     Counter.hour += 1
+        # if Counter.hour >= Clock.HOURS:
+        #     Counter.hour = 0
 
     def __str__(self):
         """
         현재 시간을 시:분:초 형식으로 리턴한다. 시, 분, 초는 두 자리 형식이다.
         예시: "03:11:02"
         """
-        # 코드를 쓰세요
-        return f'{str(Counter.hour).zfill(2)}:{str(Counter.minute).zfill(2)}:{str(Counter.second).zfill(2)}'
+        # return f'{str(Counter.hour).zfill(2)}:{str(Counter.minute).zfill(2)}:{str(Counter.second).zfill(2)}'
         # return str(Counter.hour)+":"+str(Counter.minute)+":"+str(Counter.second)
+        return f'{self.hour}:{self.minute}:{self.second}'
 
 
 # 초가 60이 넘을 때 분이 늘어나는지 확인하기
