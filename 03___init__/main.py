@@ -1,5 +1,5 @@
 class User:
-    def __init__(self, n, m, p): # magic method, special method (특수 메소드)
+    def __init__(self, n, m, p): # magic method, special method (특수 메소드; 특정 상황에 자동으로 호출되는 메소드)
         self.name = n
         self.email = m
         self.password = p
