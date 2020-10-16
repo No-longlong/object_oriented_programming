@@ -20,6 +20,8 @@ user3 = User("아저씨", 'mefasdfrn@naver.com', '**fdsfasf**')
 # user.count = 5 --> X
 User.count = 5 # 클래스 변수를 통해 클래스 변수 값 변경
 
+# 클래스 변수 읽기 1. 클래스이름.클래스변수 2. 인스턴스이름.클래스변수
+# 클래스 변수 설정하기 1. 클래스이름.클래스변수
 
 print(User.count)
 print(user1.count)
