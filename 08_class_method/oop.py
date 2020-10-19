@@ -42,7 +42,7 @@ class User:
 # user1 = User("박", 'park222@naver.com', '12345')
 
 # 인스턴스 메소드는 user1을 첫번째 파라미터로 보내지만
-# 클래스 메소드는 앞에 나온 User이나 user1이라는 클래스를 보낸다. (클래스 메소드 데코레이터)
+# 클래스 메소드는 앞에 나온 User이라는 클래스 혹은 user1의 클래스인 User를 보낸다. (클래스 메소드 데코레이터)
 # User.number_of_users(user1)
 # user1.number_of_users()
 
