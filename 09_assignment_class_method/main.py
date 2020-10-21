@@ -4,8 +4,10 @@ class User:
         self.email = email
         self.password = password
 
-    @classmethod
+    @classmethod # 클래스 메소드 설정
     def from_string(cls, string_params):
+        # 첫번째 인자는 cls 규칙 준수
+        # string을 나눠서 class에 return
         split_user = string_params.split(",")
         name = split_user[0]
         email = split_user[1]
