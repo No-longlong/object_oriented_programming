@@ -14,7 +14,7 @@ class User:
         password = split_user[2]
         return cls(name, email, password)
 
-    @classmethod
+    @classmethod # 클래스 메소드 설정
     def from_list(cls, list_params):
         name = list_params[0]
         email = list_params[1]
