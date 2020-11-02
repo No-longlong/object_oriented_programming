@@ -3,7 +3,8 @@ class MenuItem:
     def __init__(self, name, price):
         self.name = name
         self.price = price
-
+    
+    # 프린트 시 나오는 메소드는 __str__임
     def __str__(self):
         return (f"{self.name} 가격: {self.price}")
 
